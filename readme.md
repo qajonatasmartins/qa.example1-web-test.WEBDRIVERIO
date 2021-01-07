@@ -6,13 +6,16 @@ npm install
 
 npm run nome_suite_test
 
-Ex.: npm run login
+**Ex.:** npm run login
 
 # Geração do relatório allure reports
 
-## Windows 
+## Windows
+
 npx allure generate allure-results/ --clean
+
 npx allure open
 
-## Mac 
+## Mac
+
 allure generate allure-results/ -- clean && allure open
