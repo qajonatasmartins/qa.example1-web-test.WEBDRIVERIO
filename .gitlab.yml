@@ -1,0 +1,19 @@
+image: node:latest
+cache:
+  paths:
+    - node_modules/
+stages:
+    - lint
+    - test
+eslint:
+stage: lint
+  script:
+      - npm install
+      - npm eslint .
+build_test:
+  stage: test 
+  services:
+      - selenium/standalone-chrome
+  script:
+      - npm install
+      - npm run test --host=selenium__standalone-firefox-debug

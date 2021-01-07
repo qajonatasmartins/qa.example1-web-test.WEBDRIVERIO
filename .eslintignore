@@ -1,0 +1,6 @@
+wdio.config.js
+node_modules
+allure-results
+package-lock.json
+.vscode
+allure-report
