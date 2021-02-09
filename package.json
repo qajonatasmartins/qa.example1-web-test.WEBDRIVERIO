@@ -1,7 +1,7 @@
 {
   "name": "webdriverio-test",
   "version": "1.0.0",
-  "description": "Projeto Base automação web webdriver IO",
+  "description": "Projeto Base automação web webdriverIO",
   "main": "index.js",
   "scripts": {
     "test": "wdio wdio.conf.js",
