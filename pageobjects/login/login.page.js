@@ -1,3 +1,4 @@
+import actions from '../../helpers/actions.js';
 import Page from '../page.js';
 
 export default class LoginPage extends Page {
@@ -30,6 +31,8 @@ export default class LoginPage extends Page {
     }
 
     open() {
+        //actions.open(browser.config.baseUrl)
+        //browser.maximizeWindow()
         return super.open('login');
     }
 }

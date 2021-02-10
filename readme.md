@@ -1,3 +1,8 @@
+# webdriverio-test
+
+Testes automatizados utilizando Chai e WebdriverIO. 
+Projeto base para testes Web.
+
 # Intalação
 
 npm install
@@ -22,6 +27,8 @@ npm run nome_suite_test
 
 **Ex.:** npm run login
 
+OS arquivos que serão executados através do comando 'npm run nome_suite_test', estão localizados no arquivo 'wdio.config.js'
+
 # Geração do relatório allure reports
 
 ## Windows
@@ -33,3 +40,5 @@ npx allure open
 ## Mac
 
 allure generate allure-results/ -- clean && allure open
+ou
+allure open
