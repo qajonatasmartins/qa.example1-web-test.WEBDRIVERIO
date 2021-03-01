@@ -5,7 +5,9 @@ exports.config = {
     // Runner Configuration
     // ====================
 
-    runner: 'local',
+    host: 'locahost',
+    port: 4444,
+    path: '/',
 
     // ==================
     // Specify Test Files
@@ -25,27 +27,38 @@ exports.config = {
     // ============
     // Capabilities
     // ============
-    maxInstances: 10,
+    maxInstances: 1,
     capabilities: [{
-        maxInstances: 5,
+        maxInstances: 1,
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ['--headless', '--disable-gpu', 'window-size=1280,1024']
+            args: ['--headless', '--disable-gpu', 'window-size=1280,1024', '--no-sandbox']
         },
     }],
     // ===================
     // Test Configurations
     // ===================
-    logLevel: 'info',
+    logLevel: 'silent',
     bail: 0,
     baseUrl: 'https://the-internet.herokuapp.com/login',
     waitforTimeout: 80000,
     connectionRetryTimeout: 50000,
     connectionRetryCount: 3,
-    services: ['chromedriver'],
+    services: ['selenium-standalone'],
+    seleniumInstallArgs: {
+        drivers: {
+            crome: true
+        }
+    },
+    seleniumArgs: {
+        drivers: {
+            crome: true
+        }
+    },
     framework: 'mocha',
+    specFileRetries: 1,
     reporters: [['allure', {
-        outputDir: 'allure-results',
+        outputDir: 'allure-results/',
         disableWebdriverStepsReporting: true,
         disableWebdriverScreenshotsReporting: false,
         disableMochaHooks: true

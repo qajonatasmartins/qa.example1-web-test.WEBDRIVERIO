@@ -17,7 +17,6 @@
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
-    "@babel/eslint-plugin": "7.12.1",
     "@babel/preset-env": "^7.12.11",
     "@babel/register": "^7.12.10",
     "@wdio/allure-reporter": "^6.10.6",
@@ -26,15 +25,18 @@
     "@wdio/mocha-framework": "^6.10.11",
     "@wdio/spec-reporter": "^6.10.6",
     "@wdio/sync": "^6.10.11",
-    "babel-eslint": "^10.1.0",
     "babel-preset-env": "^1.7.0",
-    "chromedriver": "^87.0.4",
     "eslint": "^7.17.0",
     "eslint-plugin-mocha": "^8.0.0",
     "eslint-plugin-wdio": "^6.6.0",
-    "wdio-chromedriver-service": "^6.0.4"
+    "@babel/eslint-plugin": "7.12.1",
+    "babel-eslint": "^10.1.0"
   },
   "dependencies": {
+    "chromedriver": "^87.0.4",
+    "@babel/eslint-parser": "^7.12.1",
+    "@babel/eslint-plugin": "^7.12.1",
+    "@wdio/selenium-standalone-service": "^6.12.1",
     "allure-commandline": "^2.13.8",
     "chai": "^4.2.0",
     "moment": "^2.29.1",
