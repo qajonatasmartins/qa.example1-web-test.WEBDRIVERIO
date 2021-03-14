@@ -8,7 +8,7 @@ module.exports = {
         url: 'https://the-internet.herokuapp.com/login'
     },
     HML2: {
-        name: 'HML2 - IP 18.223.245.125',
+        name: 'HML2',
         url: 'https://the-internet.herokuapp.com/login'
     },
     PROD: {

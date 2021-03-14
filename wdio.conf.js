@@ -1,5 +1,4 @@
 const allure = require('allure-commandline')
-const { PROD } = require('./environmentUrls')
 const base = require('./environmentUrls')
 const ENV = process.env.ENV
 
@@ -27,7 +26,7 @@ exports.config = {
     ],
     suites: {
         login: [
-            './test/*.js'
+            './test/**/*.js'
         ]
     },
     exclude: [
@@ -39,10 +38,10 @@ exports.config = {
     maxInstances: 5,
     capabilities: [{
         maxInstances: 5,
-        browserName: 'chrome',
-        'goog:chromeOptions': {
-            args: ['--headless', '--disable-gpu', 'window-size=1280,1024', '--no-sandbox']
-        },
+        browserName: 'chrome'//,
+        // 'goog:chromeOptions': {
+        //   args: ['--headless', '--disable-gpu', 'window-size=1280,1024', '--no-sandbox']
+        //},
     }],
     // ===================
     // Test Configurations
