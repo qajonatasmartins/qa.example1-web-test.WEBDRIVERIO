@@ -23,13 +23,16 @@ npm install
 
 # Execução dos testes
 
-npm run nome_suite_test
+ENV=AMBIENTE npm run nome_suite_test
 
-**Ex.:** npm run login
+**Ex.:** ENV=PROD npm run login
 
 OS arquivos que serão executados através do comando 'npm run nome_suite_test', estão localizados no arquivo 'wdio.config.js'
 
 # Geração do relatório allure reports
+
+**Obs.:** Utilizar o terminal Bash. Para isso, no visual code precione Ctrl + Shift + P e pesquise
+por 'Select default shell' e selecione o teclado .bash 
 
 ## Windows
 

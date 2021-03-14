@@ -1,5 +1,14 @@
 const allure = require('allure-commandline')
+const { PROD } = require('./environmentUrls')
+const base = require('./environmentUrls')
+const ENV = process.env.ENV
 
+if (!ENV || !['HML', 'HML2', 'HML3', 'PROD'].includes(ENV)) {
+    console.log('Por favor informe corretamente o ambiente de execução dos testes.\n')
+    console.log('Entradas válidas: ENV=HML | ENV=HML2 | ENV=HML3 | ENV=PROD |\n')
+    console.log('Exemplo válido: ENV=HML npm run login\n')
+    process.exit()
+}
 exports.config = {
     // ====================
     // Runner Configuration
@@ -14,7 +23,7 @@ exports.config = {
     // ==================
 
     specs: [
-        './test/*.js'
+        './test/**/*.js'
     ],
     suites: {
         login: [
@@ -27,9 +36,9 @@ exports.config = {
     // ============
     // Capabilities
     // ============
-    maxInstances: 1,
+    maxInstances: 5,
     capabilities: [{
-        maxInstances: 1,
+        maxInstances: 5,
         browserName: 'chrome',
         'goog:chromeOptions': {
             args: ['--headless', '--disable-gpu', 'window-size=1280,1024', '--no-sandbox']
@@ -40,19 +49,19 @@ exports.config = {
     // ===================
     logLevel: 'silent',
     bail: 0,
-    baseUrl: 'https://the-internet.herokuapp.com/login',
+    baseUrl: base[process.env.ENV].url,
     waitforTimeout: 80000,
     connectionRetryTimeout: 50000,
     connectionRetryCount: 3,
     services: ['selenium-standalone'],
     seleniumInstallArgs: {
         drivers: {
-            crome: true
+            chrome: true
         }
     },
     seleniumArgs: {
         drivers: {
-            crome: true
+            chrome: true
         }
     },
     framework: 'mocha',
@@ -65,7 +74,7 @@ exports.config = {
     }]],
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000,
+        timeout: 120000,
         require: ['@babel/register']
     },
     // =====
